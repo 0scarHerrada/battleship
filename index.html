@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@700&family=Teko:wght@500;600&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="normalizeReset.css">
+    <title>Battleship</title>
+</head>
+<body id="body" onload="view.displayWindowSize()" onresize="view.displayWindowSize()" onreset="view.displayWindowSize()">
+<header id="header">
+    <div class="logo-container">
+        <img src="./assets/battleship_icon_svg.svg" alt="">
+    </div>
+    <h1>BATTLESHIP</h1>
+</header>
+<main id="main">
+    <section class="boats-section">
+        <div class="objective-card">
+            <h2>Objectives</h2>
+            <div class="objective-board">
+                <div id="obj1" class="objective-container">
+                    <img  id="ship1" class="warship-small" src="" alt="">
+                </div>
+                <div id="obj2" class="objective-container">
+                    <img id="ship2" class="warship-medium" src="" alt="">
+                </div>
+                <div id="obj3" class="objective-container">
+                    <img id="ship3" class="warship-large" src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="objective-card">
+            <h2>Defend</h2>
+            <div class="objective-board">
+                <div id="ali1" class="objective-container">
+                    <img id="ship4" class="warship-small" src="" alt="">
+                </div>
+                <div id="ali2" class="objective-container">
+                    <img id="ship5" class="warship-medium" src="" alt="">
+                </div>
+                <div id="ali3" class="objective-container">
+                    <img id="ship6" class="warship-large" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="board-section">
+        <div class="full-board">
+        <div class="rows-and-table">
+            <div class="rows-index">
+                <span class="rows">A</span>
+                <span class="rows">B</span>
+                <span class="rows">C</span>
+                <span class="rows">D</span>
+                <span class="rows">E</span>
+                <span class="rows">F</span>
+                <span class="rows">G</span>
+            </div>
+            <div class="table">
+                <table class="board-table">
+                    <tr class="table-row">
+                        <td id="A0" class="table-square"></td>
+                        <td id="A1" class="table-square"></td>
+                        <td id="A2" class="table-square"></td>
+                        <td id="A3" class="table-square"></td>
+                        <td id="A4" class="table-square"></td>
+                        <td id="A5" class="table-square"></td>
+                        <td id="A6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="B0" class="table-square"></td>
+                        <td id="B1" class="table-square"></td>
+                        <td id="B2" class="table-square"></td>
+                        <td id="B3" class="table-square"></td>
+                        <td id="B4" class="table-square"></td>
+                        <td id="B5" class="table-square"></td>
+                        <td id="B6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="C0" class="table-square"></td>
+                        <td id="C1" class="table-square"></td>
+                        <td id="C2" class="table-square"></td>
+                        <td id="C3" class="table-square"></td>
+                        <td id="C4" class="table-square"></td>
+                        <td id="C5" class="table-square"></td>
+                        <td id="C6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="D0" class="table-square"></td>
+                        <td id="D1" class="table-square"></td>
+                        <td id="D2" class="table-square"></td>
+                        <td id="D3" class="table-square"></td>
+                        <td id="D4" class="table-square"></td>
+                        <td id="D5" class="table-square"></td>
+                        <td id="D6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="E0" class="table-square"></td>
+                        <td id="E1" class="table-square"></td>
+                        <td id="E2" class="table-square"></td>
+                        <td id="E3" class="table-square"></td>
+                        <td id="E4" class="table-square"></td>
+                        <td id="E5" class="table-square"></td>
+                        <td id="E6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="F0" class="table-square"></td>
+                        <td id="F1" class="table-square"></td>
+                        <td id="F2" class="table-square"></td>
+                        <td id="F3" class="table-square"></td>
+                        <td id="F4" class="table-square"></td>
+                        <td id="F5" class="table-square"></td>
+                        <td id="F6" class="table-square"></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td id="G0" class="table-square"></td>
+                        <td id="G1" class="table-square"></td>
+                        <td id="G2" class="table-square"></td>
+                        <td id="G3" class="table-square"></td>
+                        <td id="G4" class="table-square"></td>
+                        <td id="G5" class="table-square"></td>
+                        <td id="G6" class="table-square"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="space-and-columns">
+            <div class="columns-index-spacer"></div>
+            <div class="columns-index">
+                <span class="columns">0</span>
+                <span class="columns">1</span>
+                <span class="columns">2</span>
+                <span class="columns">3</span>
+                <span class="columns">4</span>
+                <span class="columns">5</span>
+                <span class="columns">6</span>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="attack-section">
+        <div class="attack-container">
+            <div class="code-display">
+                <div class="code input-commit-container">
+                    <input type="text" name="input" id="code-display" class="input" maxlength="2" required
+                           onchange="view.processCode(this)">
+                    <div id="commit-fire" class="commit" onclick="controller.commitFire(this)"></div>
+                </div>
+                <button id="clear-fire" class="code fire" onclick="controller.playerFire()">Clear</button>
+            </div>
+            <div class="code-input">
+                <div class="code-buttons alpha">
+                    <button id="btn1" class="code-button" onclick="controller.input(this)">A</button>
+                    <button id="btn2" class="code-button" onclick="controller.input(this)">B</button>
+                    <button id="btn3" class="code-button" onclick="controller.input(this)">C</button>
+                    <button id="btn4" class="code-button" onclick="controller.input(this)">D</button>
+                    <button id="btn5" class="code-button" onclick="controller.input(this)">E</button>
+                    <button id="btn6" class="code-button" onclick="controller.input(this)">F</button>
+                    <button id="btn7" class="code-button" onclick="controller.input(this)">G</button>
+                </div>
+                <div class="code-buttons numerical">
+                    <button id="btn8" class="code-button" onclick="controller.input(this)">0</button>
+                    <button id="btn9" class="code-button" onclick="controller.input(this)">1</button>
+                    <button id="btn10" class="code-button" onclick="controller.input(this)">2</button>
+                    <button id="btn11" class="code-button" onclick="controller.input(this)">3</button>
+                    <button id="btn12" class="code-button" onclick="controller.input(this)">4</button>
+                    <button id="btn13" class="code-button" onclick="controller.input(this)">5</button>
+                    <button id="btn14" class="code-button" onclick="controller.input(this)">6</button>
+                </div>
+            </div>
+            <section class="game-manager">
+                <button id="start" class="game-button" onclick="controller.startButton()">START</button>
+                <div id="legend" class="legend">
+                    <div class="legend-item user-hit-container">
+                        <div class="legend-square user-hit"></div>
+                        <span>=</span>
+                        <span>User Hit</span>
+                    </div>
+                    <div class="legend-item user-miss-container">
+                        <div class="legend-square user-miss"></div>
+                        <span>=</span>
+                        <span>User Miss</span>
+                    </div>
+                    <div class="legend-item allie-ship-container">
+                        <div class="legend-square allie-ship"></div>
+                        <span>=</span>
+                        <span>Allie Ship</span>
+                    </div>
+                    <div class="legend-item enemy-hit-container">
+                        <div class="legend-square enemy-hit"></div>
+                        <span>=</span>
+                        <span>Enemy Hit</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+<section id="gameover" class="gameover">
+    <h3>GAME OVER</h3>
+    <h4 id="gameover-message"></h4>
+    <button class="reset-button" onclick="controller.gameReset()">Reset Game</button>
+</section>
+<section id="window-check" class="window-check">
+    <p id="window-message"></p>
+</section>
+<footer></footer>
+<script src="index.js" ></script>
+</body>
+</html>
