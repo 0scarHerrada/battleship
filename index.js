@@ -23,8 +23,10 @@ const ali3 = document.getElementById("ali3");
 const gameover = document.getElementById("gameover");
 const gameoverMessage = document.getElementById("gameover-message");
 // Body elements for window resizing events
-const windowCheck = document.getElementById("window-check");
+const body = document.getElementById("body");
+const header = document.getElementById("header");
 const main = document.getElementById("main");
+const windowCheck = document.getElementById("window-check");
 const windowMessage = document.getElementById("window-message");
 
 
@@ -34,26 +36,30 @@ const view = {
         let isMobile = this.mobileCheck();
         if (isMobile) {
             if (window.innerWidth < window.innerHeight) {
-                let bodyTag = document.createElement("body");
-                bodyTag.style.maxHeight = "100vh";
-                bodyTag.style.padding = "0.5% 1% 1% 1%";
-                bodyTag.style.fontSize = "1.25rem !important";
-                document.getElementById("header").style.display = "none";
-                document.getElementById("main").style.minHeight = "98vh";
+                body.style.height = "100vh";
+                body.style.paddingTop = "0"
+                header.style.display = "flex";
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
+            } else {
+                body.style.height = "100vh";
+                body.style.paddingTop = "1%";
+                header.style.display = "none";
+                main.style.display = "grid";
+                main.style.minHeight = "95vh";
+                windowCheck.style.display = "none";
             }
         } else {
-            if ((window.innerHeight / screen.height) <= 0.85 && (window.innerWidth / screen.width) <= 0.85) {
+            if ((window.innerHeight / screen.height) <= 0.64 && (window.innerWidth / screen.width) <= 0.75) {
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.innerHTML = "The browser needs to be longer and wider to play BattleShip.";
-            } else if (window.innerHeight / screen.height <= 0.85) {
+            } else if (window.innerHeight / screen.height <= 0.64) {
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.innerHTML = "The browser needs to be longer to play BattleShip.";
-            } else if (window.innerWidth / screen.width <= 0.85) {
+            } else if (window.innerWidth / screen.width <= 0.75) {
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.innerHTML = "The browser needs to be wider to play BattleShip.";
@@ -91,17 +97,20 @@ const view = {
     },
     mobileCheck: function() {
         let isMobile;
-        function myFunction() {
-            isMobile = !!(navigator.userAgent.match(/Android/i)
-                || navigator.userAgent.match(/webOS/i)
-                || navigator.userAgent.match(/iPhone/i)
-                || navigator.userAgent.match(/iPad/i)
-                || navigator.userAgent.match(/iPod/i)
-                || navigator.userAgent.match(/BlackBerry/i)
-                || navigator.userAgent.match(/Windows Phone/i));
+
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+            isMobile = true ;
+        } else {
+            isMobile = false;
         }
 
-        return !! isMobile;
+        return isMobile;
     },
     processCode: function(e) {
         if (model.gameStarted === true) {
