@@ -232,7 +232,6 @@ h2 {
     width: 95%;
     height: 98%;
     background-color: white;
-    color: black;
     display: grid;
     grid-template-rows: 1.5fr 5.25fr 3.25fr;
     border: 5px solid #333;
@@ -247,6 +246,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: black;
+    color: black;
     border-radius: 20px;
     justify-self: center;
 }

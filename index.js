@@ -37,16 +37,16 @@ const view = {
         let isMobile = this.mobileCheck();
         if (isMobile) {
             body.style.height = "100vh";
-            legend.fontSize = "0.9rem";
+            legend.fontSize = "0.5rem";
             resetButton.style.fontSize = "1.2rem";
-            commitFire.style.width = "99%";
-            commitFire.style.height = "40%";
+            commitFire.style.width = "125%";
+            commitFire.style.height = "50%";
             if (window.innerWidth < window.innerHeight) {
                 body.style.paddingTop = "0"
                 header.style.display = "flex";
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
-                windowMessage.style.fontSize = "1.5rem";
+                windowMessage.style.fontSize = "1.8rem";
                 windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
             } else {
                 body.style.paddingTop = "1%";
