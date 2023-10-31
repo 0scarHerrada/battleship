@@ -43,7 +43,7 @@ const view = {
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.style.fontSize = "2rem";
-                windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
+                windowMessage.innerHTML = "Rotate your device horizontally to play BattleShip.";
             } else {
                 let legendItems = document.getElementsByClassName("legend-item");
                 [...legendItems].forEach(item => {
