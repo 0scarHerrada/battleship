@@ -246,7 +246,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: black;
-    color: black;
     border-radius: 20px;
     justify-self: center;
 }
@@ -298,8 +297,8 @@ h2 {
     justify-self: center;
     display: inline;
     background-color: whitesmoke;
-    width: 95%;
-    height: 55%;
+    width: 30px;
+    height: 30px;
     border: 2px solid black;
     border-radius: 50%;
     margin-left: 7%;
@@ -345,6 +344,8 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
+    color: black;
+
 }
 
 .code-button:hover {
@@ -381,6 +382,7 @@ h2 {
     font-family: 'Teko', sans-serif;
     font-size: 3.5rem;
     text-transform: uppercase;
+    color: black;
 }
 
 .legend {

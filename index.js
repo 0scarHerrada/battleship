@@ -36,19 +36,28 @@ const view = {
     displayWindowSize: function() {
         let isMobile = this.mobileCheck();
         if (isMobile) {
+            body.style.height = "100vh";
             if (window.innerWidth < window.innerHeight) {
-                body.style.height = "100vh";
                 body.style.paddingTop = "0"
                 header.style.display = "flex";
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
-                windowMessage.style.fontSize = "1.8rem";
+                windowMessage.style.fontSize = "2rem !important";
                 windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
             } else {
-                legend.fontSize = "0.5rem";
+                let legendItems = document.getElementsByClassName("legend-item");
+                [...legendItems].forEach(item => {
+                    item.style.fontSize = "0.8rem";
+                });
+                let legendSquares = document.getElementsByClassName("legend-square");
+                [...legendSquares].forEach(square => {
+                    square.style.height = "35%";
+                    square.style.borderRadius = "4px";
+                })
                 resetButton.style.fontSize = "1.2rem";
-                commitFire.style.width = "125%";
-                commitFire.style.height = "50%";
+                commitFire.style.width = "20px";
+                commitFire.style.height = "20px";
+                commitFire.style.marginRight = "0.2rem";
                 body.style.paddingTop = "1%";
                 header.style.display = "none";
                 main.style.display = "grid";
@@ -81,6 +90,7 @@ const view = {
     displayGameOver: function(msg) {
         gameoverMessage.innerHTML = msg;
         gameover.style.display = 'flex';
+        body.style.paddingTop = "0";
     },
     displayAllies: function() {
         model.ships.allies.masterLocations.forEach(shipPosition => {
