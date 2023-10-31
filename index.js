@@ -46,6 +46,7 @@ const view = {
                 header.style.display = "flex";
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
+                windowMessage.style.fontSize = "1.5rem";
                 windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
             } else {
                 body.style.paddingTop = "1%";
