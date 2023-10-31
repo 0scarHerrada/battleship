@@ -28,6 +28,7 @@ const header = document.getElementById("header");
 const main = document.getElementById("main");
 const windowCheck = document.getElementById("window-check");
 const windowMessage = document.getElementById("window-message");
+const resetButton = document.getElementById("reset-button");
 
 
 
@@ -35,15 +36,18 @@ const view = {
     displayWindowSize: function() {
         let isMobile = this.mobileCheck();
         if (isMobile) {
+            body.style.height = "100vh";
+            legend.fontSize = "0.9rem";
+            resetButton.style.fontSize = "1.2rem";
+            commitFire.style.width = "99%";
+            commitFire.style.height = "40%";
             if (window.innerWidth < window.innerHeight) {
-                body.style.height = "100vh";
                 body.style.paddingTop = "0"
                 header.style.display = "flex";
                 main.style.display = "none";
                 windowCheck.style.display = "flex";
                 windowMessage.innerHTML = "The browser needs to be rotated horizontally to play BattleShip.";
             } else {
-                body.style.height = "100vh";
                 body.style.paddingTop = "1%";
                 header.style.display = "none";
                 main.style.display = "grid";

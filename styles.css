@@ -232,6 +232,7 @@ h2 {
     width: 95%;
     height: 98%;
     background-color: white;
+    color: black;
     display: grid;
     grid-template-rows: 1.5fr 5.25fr 3.25fr;
     border: 5px solid #333;
